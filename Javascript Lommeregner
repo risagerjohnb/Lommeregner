@@ -7,7 +7,7 @@ const lineTwoText = document.querySelectorAll('[data-linetwo]')
 
 /*----------------------------to make the buttons work START------------------------------*/
 class Lommeregner {
-    constructor(lineone, linetwo){
+    constructor(lineOneText, lineTwoText){
         this.lineOneText = lineOneText
         this.lineTwoText = lineTwoText
         this.clear()
