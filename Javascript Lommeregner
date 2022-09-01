@@ -1,0 +1,57 @@
+const nummerButton = document.querySelectorAll('[data-nummer]')
+const clearButton = document.querySelectorAll('[data-clear]')
+const equalsButton = document.querySelectorAll('[data-equals]')
+const regneMetodeButton = document.querySelectorAll('[data-regnemetode]')
+const lineOneText = document.querySelectorAll('[data-lineone]')
+const lineTwoText = document.querySelectorAll('[data-linetwo]')
+
+/*----------------------------to make the buttons work START------------------------------*/
+class Lommeregner {
+    constructor(lineone, linetwo){
+        this.lineOneText = lineOneText
+        this.lineTwoText = lineTwoText
+        this.clear()
+    }
+
+    //clears the text
+    clear(){
+        this.lineOne = ''
+        this.lineTwo = ''
+        this.regnemetode = undefined
+    }
+
+    //when the user inputs a number
+    inputNumber(nummer){
+        this.lineOne = nummer
+    }
+
+    //when the user inputs an operation
+    inputRegnemetode(regnemetode){
+
+    }
+
+    //calculates the numbers together
+    calculate(){
+
+    }
+
+    //updates the display
+    updateDisplay(){
+        this.lineOneText.innerText = this.lineOne
+    }
+}
+/*----------------------------to make the buttons work END------------------------------*/
+
+//makes it operate on the calculator
+const lommeregner = new Lommeregner(lineOneText, lineTwoText) 
+
+
+nummerButton.forEach(button =>
+    //when you click on a button, an event happens 
+    {button.addEventListener('click', () => {
+    //Numbers appear
+    lommeregner.inputNumber(button.innerText)
+    //updates the display
+    lommeregner.updateDisplay()
+    })
+})
